@@ -39,7 +39,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             ),
             CustomButton(
               text: "Login",
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamedAndRemoveUntil(
+                  Routes.homeView,
+                  predicate: (route) => false,
+                );
+              },
             ),
             const SizedBox(
               height: 10,
@@ -49,7 +54,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 const Text("You don't have an account?"),
                 TextButton(
                     onPressed: () {
-                      context.pushNamed(Routes.signUpview);
+                      context.pushNamed(Routes.signUpView);
                     },
                     child: Text(
                       "SignUp",

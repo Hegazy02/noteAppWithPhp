@@ -40,7 +40,12 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
           ),
           CustomButton(
             text: "SignUp",
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamedAndRemoveUntil(
+                Routes.homeView,
+                predicate: (route) => false,
+              );
+            },
           ),
           const SizedBox(
             height: 10,
