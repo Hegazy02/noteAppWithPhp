@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:noteappwithphp/core/routing/app_router.dart';
-import 'package:noteappwithphp/core/routing/routes.dart';
 import 'package:noteappwithphp/core/theme/colors.dart';
-import 'package:noteappwithphp/features/auth/presentation/views/login_view.dart';
 
 class NoteappwithphpApp extends StatelessWidget {
-  const NoteappwithphpApp({super.key});
+  final String? initialRoute;
+
+  const NoteappwithphpApp({super.key, this.initialRoute});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,7 @@ class NoteappwithphpApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: MyColors.primaryColor),
         useMaterial3: true,
       ),
-      home: const LoginView(),
-      initialRoute: Routes.loginView,
+      initialRoute: initialRoute,
       onGenerateRoute: AppRouter.generateRoute,
     );
   }

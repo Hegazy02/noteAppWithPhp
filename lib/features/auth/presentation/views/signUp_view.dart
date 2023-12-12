@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:noteappwithphp/features/auth/presentation/view_model/auth/auth_cubit.dart';
 import 'package:noteappwithphp/features/auth/presentation/views/widgets/signUp_view_body.dart';
 
 class SignUpView extends StatelessWidget {
@@ -6,6 +8,11 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: SafeArea(child: SignUpViewBody()));
+    return Scaffold(
+        body: SafeArea(
+            child: BlocProvider(
+      create: (context) => AuthCubit(),
+      child: const SignUpViewBody(),
+    )));
   }
 }
