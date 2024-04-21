@@ -26,6 +26,7 @@ class SignUpRepo {
 
       // }
       if (data['status'] == "Success") {
+        print("ddd $data");
         return Right(data);
       } else {
         return Left(ServerFailure(errMessage: data['status']));

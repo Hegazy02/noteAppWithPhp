@@ -23,7 +23,6 @@ class AuthCubit extends Cubit<AuthState> {
       print("failed ${failed.errMessage}");
     }, (data) {
       emit(AuthSuccess(userData: data['userData']));
-
       print("data $data");
     });
   }
